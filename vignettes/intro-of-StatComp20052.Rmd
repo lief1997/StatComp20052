@@ -1,0 +1,44 @@
+---
+title: "StatComp20052"
+author: 'Lief Lv'
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{StatComp20052}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+__StatComp20052__ is a simple R package developed to compute the probability of exactly one of these events occurring, and to identify the most deviant observation for each row of x. Two functions are included, namely, _exactlyone_ and _findols_ . For each function, examples are given.
+## Introduction to _exactlyone_ 
+
+The source R code for _exactlyone_ is as follows:
+
+***exactlyone***
+```{r}
+exactlyone <- function(p) {
+  notp <- 1 - p
+  tot <- 0.0
+  for (i in 1:length(p))
+    tot <- tot + p[i] * prod(notp[-i])
+  return(tot)
+}
+```
+
+## Introduction to _findols_ 
+
+The source R code for _findols_ is as follows:
+
+***findols***
+```{r}
+findols <- function(x) {
+  findol <- function(xrow) {
+    mdn <- median(xrow)
+    devs <- abs(xrow - mdn)
+    return(which.max(devs))
+    }
+  return(apply(x,1,findol)) 
+}
+```

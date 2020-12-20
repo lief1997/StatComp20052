@@ -1,0 +1,17 @@
+Package: StatComp20052
+Type: Package
+Title: hw of lief
+Version: 1.0
+Date: 2020-12-20
+Author: Lief Lv
+Maintainer: Lief Lv <lief1997@mail.ustc.edu.cn>
+Description: An R package that includes two functions from my research project and all functions for my homework.
+License: GPL (>= 2)
+Imports: MASS, Rcpp, bootstrap, boot, DAAG, RANN, Ball, energy, microbenchmark
+LinkingTo: Rcpp
+Encoding: UTF-8
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1
+URL: https://github.com/lief1997/StatComp20052
+BugReports: https://github.com/lief1997/StatComp20052/issues
